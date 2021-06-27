@@ -1,20 +1,25 @@
 import requests
 api = '298c5dc93064a6f65f2124f2aec08b6f'
 location = input("enter location(city name):")
-API_link = "api.openweathermap.org/data/2.5/weather?q="+location+"&appid="+api
-Report = requests.get(API_link)
-About = Report.json()
-tempe = ((About['main']['temp'])-273.15)
-Wthr = About['weather'][0]['description']
-Hmd = About['main']['humidity']
-WS = About['wind']['speed']
-with open('weather.txt','w') as f:
+
+api_link = "https://api.openweathermap.org/data/2.5/weather?q="+location+"&appid="+api
+link = requests.get(api_link)
+api_data = link.json()
+
+
+temp_city = ((api_data['main']['temp']) - 273)
+weather_desc = api_data['weather'][0]['description']
+hmdt = api_data['main']['humidity']
+wind_spd = api_data['wind']['speed']
+with open('weather.txt' , 'w') as f:
     f.write("temperature in deg C:")
-    f.write(tempe)
-    f.write("weather:")
-    f.write(Wthr)
-    f.write("Humidity in %:")
-    f.write(Hmd)
-    f.write("wind speed in KMPH:")
-    f.write(WS)
+    f.write(format(temp_city))
+    f.write("; weather:")
+    f.write(weather_desc)
+    f.write("; Humidity in %:")
+    f.write(format(hmdt))
+    f.write("; wind speed in KMPH:")
+    f.write(format(wind_spd))
+
+
 
