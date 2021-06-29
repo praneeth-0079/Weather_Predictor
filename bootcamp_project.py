@@ -12,7 +12,9 @@ weather_desc = api_data['weather'][0]['description']
 hmdt = api_data['main']['humidity']
 wind_spd = api_data['wind']['speed']
 with open('weather.txt' , 'w') as f:
-    f.write("temperature in deg C:")
+    f.write("at ")
+    f.write(location)
+    f.write("\ntemperature in deg C:")
     f.write(format(temp_city))
     f.write(";\nweather:")
     f.write(weather_desc)
