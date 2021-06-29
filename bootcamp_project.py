@@ -14,11 +14,11 @@ wind_spd = api_data['wind']['speed']
 with open('weather.txt' , 'w') as f:
     f.write("temperature in deg C:")
     f.write(format(temp_city))
-    f.write("; weather:")
+    f.write(";\nweather:")
     f.write(weather_desc)
-    f.write("; Humidity in %:")
+    f.write("; \nHumidity in %:")
     f.write(format(hmdt))
-    f.write("; wind speed in KMPH:")
+    f.write("; \nwind speed in KMPH:")
     f.write(format(wind_spd))
 
 
