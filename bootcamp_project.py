@@ -16,11 +16,11 @@ with open('weather.txt' , 'w') as f:
     f.write(location)
     f.write("\ntemperature in deg C:")
     f.write(format(temp_city))
-    f.write(";\nweather:")
+    f.write("\nweather:")
     f.write(weather_desc)
-    f.write("; \nHumidity in %:")
+    f.write("\nHumidity in %:")
     f.write(format(hmdt))
-    f.write("; \nwind speed in KMPH:")
+    f.write("\nwind speed in KMPH:")
     f.write(format(wind_spd))
 
 
